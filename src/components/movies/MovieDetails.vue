@@ -1,10 +1,15 @@
 <template>
     <div class="movie-details">
-      <h2>{{ movie?.Title }}</h2>
-      <img :src="movie?.Poster" :alt="movie?.Title">
-      <p><strong>Type:</strong> {{ movie?.Type }}</p>
-      <p><strong>Year:</strong> {{ movie?.Year }}</p>
-      <router-link to="/" class="back-link">Volver a la búsqueda</router-link>
+      <div class="poster-container">
+        <img :src="movie?.Poster" :alt="movie?.Title">
+      </div>
+      
+      <div class="info-movie">
+        <h2>{{ movie?.Title }}</h2>
+        <p><strong>Type:</strong> {{ movie?.Type }}</p>
+        <p><strong>Year:</strong> {{ movie?.Year }}</p>
+        <router-link to="/" class="back-link">Volver a la búsqueda</router-link>
+      </div>
     </div>
   </template>
   
@@ -29,22 +34,54 @@
   });
   </script>
   
-  <style scoped>
+  <style scoped lang="scss">
   .movie-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 20px;
     background-color: #f4f4f4;
-    border-radius: 8px;
-    max-width: 600px;
-    margin: 20px auto;
+    border: 5px solid $primary;
+    border-radius: 13px;
+    max-width: 800px;
+    margin: 2% auto;
+    
+    .poster-container{
+        img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+    }
+
+    .info-movie{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h2 {
+        margin-bottom: 20px;
+      }
+    
+      .back-link{
+        background-color: $primary;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 15px;
+        margin: 15px;
+        transition: 0.7s ease;
+
+        &:hover{
+          background-color: #3b1577;
+          transition: 0.7s ease;
+        }
+      }
+    }
   }
+
+    
   
-  .movie-details h2 {
-    margin-bottom: 20px;
-  }
   
-  .movie-details img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
   </style>

@@ -1,5 +1,4 @@
 <template>
- <h1>DETALLES DE LA PELICULA ID {{ movieId }}</h1>
  <MovieDetails :movieId="movieId" />
 </template>
 
