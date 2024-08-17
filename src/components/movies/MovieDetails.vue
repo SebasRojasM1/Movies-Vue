@@ -6,8 +6,12 @@
       
       <div class="info-movie">
         <h2>{{ movie?.Title }}</h2>
-        <p><strong>Type:</strong> {{ movie?.Type }}</p>
-        <p><strong>Year:</strong> {{ movie?.Year }}</p>
+        <p><strong>Plot:</strong><br> {{ movie?.Plot }}</p>
+        <p><strong>Genre:</strong><br> {{ movie?.Genre }}</p>
+        <p><strong>Actors:</strong><br> {{ movie?.Actors }}</p>
+        <p><strong>Language:</strong><br> {{ movie?.Language }}</p>
+        <p><strong>Year:</strong><br> {{ movie?.Year }}</p>
+        <p><strong>Runtime:</strong><br> {{ movie?.Runtime }}</p>
         <router-link to="/" class="back-link">Volver a la búsqueda</router-link>
       </div>
     </div>
@@ -47,6 +51,7 @@
     margin: 2% auto;
     
     .poster-container{
+      width: 50%;
         img {
         max-width: 100%;
         height: auto;
@@ -59,6 +64,8 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      text-align: center;
+      width: 50%;
 
       h2 {
         margin-bottom: 20px;

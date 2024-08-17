@@ -7,7 +7,6 @@ export interface Movie {
     Plot:  string;
     Runtime: string;
     Genre: string;
-    Director: string;
     Language: string;
     Actors: string;
 }
