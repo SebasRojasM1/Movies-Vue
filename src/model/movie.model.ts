@@ -4,4 +4,10 @@ export interface Movie {
     imdbID: string;
     Type:   string;
     Poster: string;
+    Plot:  string;
+    Runtime: string;
+    Genre: string;
+    Director: string;
+    Language: string;
+    Actors: string;
 }
