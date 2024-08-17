@@ -1,9 +1,11 @@
 <template>
  <h1>DETALLES DE LA PELICULA ID {{ movieId }}</h1>
+ <MovieDetails :movieId="movieId" />
 </template>
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
+import MovieDetails from '@/components/movies/MovieDetails.vue'
 
 const route = useRoute()
 const movieId = route.params.id as string
