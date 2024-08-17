@@ -2,8 +2,9 @@
     <div class="movie-details">
       <h2>{{ movie?.Title }}</h2>
       <img :src="movie?.Poster" :alt="movie?.Title">
-      <p><strong>Year:</strong> {{ movie?.Year }}</p>
       <p><strong>Type:</strong> {{ movie?.Type }}</p>
+      <p><strong>Year:</strong> {{ movie?.Year }}</p>
+      <router-link to="/" class="back-link">Volver a la búsqueda</router-link>
     </div>
   </template>
   
@@ -16,7 +17,7 @@
   const route = useRoute();
   const movieId = route.params.id as string;
   
-  const movie = ref<Movie | null>(null);
+  const movie = ref<Movie>();
   
   onMounted(async () => {
     const response = await HTTP.get('', {
