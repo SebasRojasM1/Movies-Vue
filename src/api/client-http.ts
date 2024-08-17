@@ -4,7 +4,6 @@ import axios from "axios";
 class ClientHTTP {
     private api: AxiosInstance;
     private apiKey: string = "690d22ef";
-
     constructor(){
         this.api = axios.create({
             baseURL: "http://www.omdbapi.com",
@@ -16,11 +15,9 @@ class ClientHTTP {
             }
         })
     }
-
     getApi(){
         return this.api;
     }
 }
-
 export default new ClientHTTP().getApi();
 
